@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Adddoctor() {
+    const navigate= useNavigate()
     const [name, setName] = useState("")
     const [age, setAge] = useState()
     const [gender, setGender] = useState("")
@@ -10,6 +13,13 @@ export default function Adddoctor() {
         e.preventDefault()
         const newDoctor = { name, age, gender, salary, specialization }
         console.log(newDoctor)
+        axios.post('https://doc-back1.onrender.com/doctors',newDoctor)
+        .then((res)=>{
+            if(res.status===201){
+                alert("Doctor added Successfully")
+                navigate("/")
+            }
+        })
     }
 
     return (
