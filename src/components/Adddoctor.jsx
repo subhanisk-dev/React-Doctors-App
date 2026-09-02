@@ -9,6 +9,7 @@ export default function Adddoctor() {
     const [gender, setGender] = useState("")
     const [salary, setSalary] = useState()
     const [specialization, setSpecialization] = useState("")
+    
     function handleSubmit(e) {
         e.preventDefault()
         const newDoctor = { name, age, gender, salary, specialization }

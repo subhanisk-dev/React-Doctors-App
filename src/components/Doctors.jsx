@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useContext } from 'react'
 import axios from 'axios'
+
+import LoginContext from '../context/Logincontext.jsx'
 
 export default function Doctors() {
     const [doctors, setDoctors] = useState([])
-    let token = localStorage.getItem("token")
+    const {token} = useContext(LoginContext)
+    
     useEffect(() => { fetchDoctors() }, [])
 
     async function handDelete(id) {

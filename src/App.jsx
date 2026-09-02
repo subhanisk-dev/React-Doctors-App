@@ -11,7 +11,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 export default function App() {
   return (
     <div>
-      <BrowserRouter >
         <Navbar/>
         <Routes>
           <Route path='/' element={<Doctors />} />
@@ -19,7 +18,6 @@ export default function App() {
           <Route path='/patients' element={<ProtectedRoutes><Patients/></ProtectedRoutes>} />
           <Route path='/login' element={<Login/>} />
         </Routes>
-      </BrowserRouter>
       {/* <Doctorcard name="SUBHANI SHAIK" gender="Male" specialty="Cardiology" />
       <Doctorcard name="PRIYA SHAIK" gender="Female" specialty="Pysiology" />
       <Doctorcard name="THARUN" gender="Female" specialty="Dermatology" /> */}

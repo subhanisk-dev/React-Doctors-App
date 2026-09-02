@@ -10,6 +10,7 @@ export default function Patients() {
     })
 
     useEffect(() => { loadPatients() }, [])
+    
     async function loadPatients() {
         await axios.get("https://doc-back1.onrender.com/patients")
             .then((res) => {

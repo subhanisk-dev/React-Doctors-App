@@ -1,8 +1,12 @@
-import React, { Children } from 'react'
+import React, { Children,useContext } from 'react'
+
 import { Navigate } from 'react-router-dom'
 
+import LoginContext from '../context/Logincontext.jsx'
+
 export default function ProtectedRoutes({children}) {
-    let token=localStorage.getItem("token")
+  const {token} = useContext(LoginContext)
+
   return (
     <div>
       {
